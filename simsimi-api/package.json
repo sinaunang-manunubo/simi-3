@@ -1,0 +1,56 @@
+{
+  "name": "simsimi-api",
+  "version": "1.0.0",
+  "description": "SimSimi-like chatbot API with database and web interface",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "setup": "npm install && node -e \"console.log('Setup complete! Run npm start to launch the application.')\"",
+    "reset-db": "rm -f database/simsimi.db && echo 'Database reset. Restart the server.'",
+    "backup-db": "cp database/simsimi.db database/simsimi-backup-$(date +%Y%m%d-%H%M%S).db && echo 'Database backed up.'",
+    "test-api": "node -e \"const fetch = require('node-fetch'); fetch('http://localhost:3000/api/ask?question=test').then(r => r.json()).then(d => console.log('API Test:', d)).catch(e => console.error('API Error:', e.message));\"",
+    "build-frontend": "echo 'Frontend is already built (HTML/CSS/JS)'"
+  },
+  "keywords": [
+    "simsimi",
+    "chatbot",
+    "api",
+    "express",
+    "sqlite",
+    "web-interface"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/simsimi-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sinaunang-manunubo/sim-3/issues"
+  },
+  "homepage": "https://github.com/yourusername/simsimi-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "node-fetch": "^2.6.9"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "files": [
+    "app.js",
+    "database.js",
+    "routes/",
+    "public/",
+    "database/",
+    "README.md",
+    "package.json"
+  ]
+}
