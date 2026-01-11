@@ -19,3 +19,10 @@ A full-featured chatbot system with teaching capability, built with Node.js, SQL
 2. Install dependencies:
 ```bash
 npm install
+
+npm start
+
+npm run dev
+
+http://localhost:3000
+
